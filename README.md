@@ -12,9 +12,12 @@ Package Managers
 
 - [Yarn](https://yarnpkg.com/lang/en/docs/install/) (for faster package downloads)
 
-## Steps to run project locally
+## Steps to run the project locally
 
 - Clone the project 
+  ```javascript
+     $ git clone git@github.com:<username>/nytimes-news.git
+  ```
 
 - From the project root folder, run the following commands 
   
@@ -31,16 +34,19 @@ Package Managers
 
 - Application will be up and running on localhost:3000
 
-  Note: If you don't have yarn installed in your system, then Please go to [yarn install](https://yarnpkg.com/lang/en/docs/install/) for further instructions
+  Note: 
+    - If you don't have yarn installed in your system, then Please go to [yarn install](https://yarnpkg.com/lang/en/docs/install/) for further instructions
+    - For fields with null or undefined, you will see 'NA' in the application
+  
   
 ## Additional Stuffs
 
-- [ReactJS](https://reactjs.org)
-
-- [Newyork times API](https://developer.nytimes.com/)
+- [AntDesign](https://ant.design/)
 
 - [MomentJS](https://developer.nytimes.com/)
 
-- [AntDesign](https://ant.design/)
+- [Newyork times API](https://developer.nytimes.com/)
+
+- [ReactJS](https://reactjs.org)
 
 - [Redux](https://redux.js.org/basics/usagewithreact)
