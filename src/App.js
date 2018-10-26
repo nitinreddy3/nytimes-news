@@ -23,14 +23,20 @@ const Styles = {
     background: '#001529'
   },
   h1: {
-    color: "white", 
+    color: "white",
     textAlign: "center"
   },
   content: {
-    margin: '24px 16px 0', 
-    background: '#fff', 
-    padding: 24, 
+    margin: '24px 16px 0',
+    background: '#fff',
+    padding: 24,
     minHeight: 280
+  },
+  topic: {
+    fontWeight: 'bold',
+    textTransform: 'capitalize',
+    fontSize: 20,
+    padding: 10
   }
 }
 
@@ -76,7 +82,7 @@ class App extends React.Component {
   renderList = () => {
     const { newsList } = this.props;
     return newsList.map(item => {
-      return (<NewsItem key={item._id} data={item} onClickHandler={this.showModal}/>)
+      return (<NewsItem key={item._id} data={item} onClickHandler={this.showModal} />)
     })
   }
 
@@ -107,12 +113,20 @@ class App extends React.Component {
             <Content style={Styles.content}>
               <Row>
                 <Col xs="12" md="6">
-                  <Search 
-                    onHandleSearchField={this.onHandleSearchField} 
-                    onHandleSearch={this.onHandleSearch} 
-                    value={search} 
-                    />
+                  <Search
+                    onHandleSearchField={this.onHandleSearchField}
+                    onHandleSearch={this.onHandleSearch}
+                    value={search}
+                  />
                 </Col>
+              </Row>
+              <Row>
+                <p style={Styles.topic}>
+                  Topic : {search}
+                  <span style={{ display: 'block', fontSize: 12, fontStyle: 'italic' }}>
+                    World news about {search}, including breaking news and archival articles published in The New York Times.
+                </span>
+                </p>
               </Row>
               {this.renderList()}
               <Button
@@ -126,8 +140,8 @@ class App extends React.Component {
             </Content>
           </Layout>
           {
-            selectedNews && 
-            <CommonModal 
+            selectedNews &&
+            <CommonModal
               visible={visible}
               hideModal={this.hideModal}
               data={selectedNews}
