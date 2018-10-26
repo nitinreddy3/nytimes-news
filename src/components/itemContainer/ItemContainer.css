@@ -1,0 +1,12 @@
+date {
+    font-size: 10;
+}
+snippet {
+    font-size: 16;
+    font-weight: 'bold';
+    color: '#000';
+}
+
+sourceStyle {
+    font-style: 'italic';
+}

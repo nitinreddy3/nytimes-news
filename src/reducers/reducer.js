@@ -1,13 +1,20 @@
+import { ACTIONS } from './../constants';
+
+/**
+ * Reducers to handle actions and update the state in the store
+ */
+
 let initialState = {
     newsList: [],
     pageIndex: 0,
     search: 'india',
     loading: false,
+    visible: false,
 } 
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'UPDATE_NEWS_LIST':
+        case ACTIONS.UPDATE_NEWS_LIST:
             if(!state.pageIndex) {
                 return {
                     ...state,
@@ -19,22 +26,34 @@ const reducer = (state = initialState, action) => {
                 newsList: [...state.newsList, ...action.newsList]
             }
             break;
-        case 'UPDATE_LIST_COUNT':
+        case ACTIONS.UPDATE_PAGE_COUNT:
             return {
                 ...state,
                 pageIndex: action.pageIndex
             }
             break;
-        case 'SEARCH':
+        case ACTIONS.SEARCH:
             return {
                 ...state,
                 search: action.search
             }
             break;
-        case 'LOADING_DATA':
+        case ACTIONS.LOADING_DATA:
             return {
                 ...state,
                 loading: action.loading
+            }
+            break;
+        case ACTIONS.MODAL_VISIBLE:
+            return {
+                ...state,
+                visible: action.visible
+            }
+            break;
+        case ACTIONS.SELECTED_ITEM:
+            return {
+                ...state,
+                selectedNews: action.selectedNews
             }
             break;
         default:

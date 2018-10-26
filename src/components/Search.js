@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
 
 const { Search: AntSearch } = Input;
 
@@ -12,13 +12,12 @@ class Search extends React.Component {
   };
 
   render() {
-    const { onHandleSearchField, onHandleSearch, value } = this.props;
+    const { onHandleSearchField, onHandleSearch } = this.props;
     return (
       <div>
         <AntSearch
           style={{
             margin: 'auto',
-            width: '50%',
             marginBottom: '2%',
           }}
           placeholder="Search The New York Times"

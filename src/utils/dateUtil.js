@@ -1,7 +1,10 @@
 import moment from 'moment';
+import { DATE_FORMAT } from './../constants';
 
-const DATE_FORMAT = "dddd, MMMM Do YYYY";
-
+/**
+ * Date format utility to format the date to a specific format
+ * @param {date} date 
+ */
 export function dateFormat (date) {
     let dateData = moment(date);
     return dateData.format(DATE_FORMAT);
