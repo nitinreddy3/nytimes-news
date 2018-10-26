@@ -15,5 +15,7 @@ export const ACTIONS = {
 export const DATE_FORMAT = 'dddd, MMMM Do YYYY';
 
 export const MESSAGES = {
-    errorFetchNewsItems: 'Failed to fetch news items'
+    ERROR_FETCH: 'Failed to fetch news items',
+    NO_SOURCE: 'No source',
+    NA: 'NA',
 }

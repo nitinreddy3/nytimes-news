@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar } from 'antd';
 import { Row, Col } from './../GridComponent';
 import { CONFIG } from './../../config';
+import { MESSAGES } from './../../constants';
 import { dateFormat } from './../../utils/dateUtil';
 
 const Style = {
@@ -29,7 +30,7 @@ const ItemContainer = (props) => {
             </Col>
             <Col xs="12" md="6">
                 <p style={Style.snippet}>{data.snippet}</p>
-                <p style={Style.source}>{data.source}</p>
+                <p style={Style.source}>{data.source || MESSAGES.NO_SOURCE}</p>
             </Col>
             <Col xs="12" md="3" style={{textAlign: 'center'}}>
                 <Avatar

@@ -37,6 +37,11 @@ const Styles = {
     textTransform: 'capitalize',
     fontSize: 20,
     padding: 10
+  },
+  topicDescription: {
+    display: 'block', 
+    fontSize: 12, 
+    fontStyle: 'italic'
   }
 }
 
@@ -117,7 +122,7 @@ class App extends React.Component {
             <Content style={Styles.content}>
             {errorLoading && (
                   <Alert
-                    message={MESSAGES.errorFetchNewsItems}
+                    message={MESSAGES.ERROR_FETCH}
                     type="error"
                     style={{ margin: '8px 0' }}
                     closable
@@ -135,7 +140,7 @@ class App extends React.Component {
               <Row>
                 <p style={Styles.topic}>
                   Topic : {search}
-                  <span style={{ display: 'block', fontSize: 12, fontStyle: 'italic' }}>
+                  <span style={Styles.topicDescription}>
                     World news about {search}, including breaking news and archival articles published in The New York Times.
                 </span>
                 </p>
