@@ -18,28 +18,15 @@ class Search extends React.Component {
         <AntSearch
           style={{
             margin: 'auto',
-            width: '28%',
+            width: '50%',
             marginBottom: '2%',
           }}
           placeholder="Search The New York Times"
           enterButton
           size="large"
-          defaultValue={value}
           onChange={e => onHandleSearchField(e.target.value)}
           onSearch={onHandleSearch}
         />
-        {/* {value ? (
-          <Button
-            onClick={() => {
-              this.setState({ searchValue: '' });
-              handleSearch('');
-            }}
-            size="large"
-            style={{ marginLeft: '2%' }}
-          >
-            Clear
-          </Button>
-        ) : null} */}
       </div>
     );
   }

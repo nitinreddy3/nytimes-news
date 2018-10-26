@@ -55,14 +55,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { pageIndex, newsList, search, loading } = this.props;
+    const { newsList, search, loading } = this.props;
     return (
       <Spin
         spinning={loading}
         delay={500}
         indicator={<Icon type="loading" style={{ fontSize: 32 }} spin />}
       >
-
         <Layout>
           <Header style={{ background: '#001529' }}>
             <h1 style={{ color: "white", textAlign: "center" }}>The New York Times</h1>
@@ -85,10 +84,8 @@ class App extends React.Component {
               >
                 View More
               </Button>
-              <p>{pageIndex}</p>
             </Content>
           </Layout>
-
         </Layout>
       </Spin>
     );

@@ -12,6 +12,7 @@
     "react-redux": "^5.0.7",
     "react-scripts": "2.0.5",
     "redux": "^4.0.1",
+    "styled-components": "^4.0.2",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {

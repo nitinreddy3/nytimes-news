@@ -1,5 +1,3 @@
-import Redux from 'redux';
-
 let initialState = {
     newsList: [],
     pageIndex: 0,
@@ -20,25 +18,25 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 newsList: [...state.newsList, ...action.newsList]
             }
-        break;
+            break;
         case 'UPDATE_LIST_COUNT':
             return {
                 ...state,
                 pageIndex: action.pageIndex
             }
-        break;
+            break;
         case 'SEARCH':
             return {
                 ...state,
                 search: action.search
             }
-        break;
+            break;
         case 'LOADING_DATA':
             return {
                 ...state,
                 loading: action.loading
             }
-        break;
+            break;
         default:
             return state;
     }
