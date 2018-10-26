@@ -2,13 +2,20 @@ import Redux from 'redux';
 
 let initialState = {
     newsList: [],
-    newsItem: {},
     pageIndex: 0,
+    search: 'india',
+    loading: false,
 } 
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'UPDATE_NEWS_LIST':
+            if(!state.pageIndex) {
+                return {
+                    ...state,
+                    newsList: action.newsList
+                }
+            }
             return {
                 ...state,
                 newsList: [...state.newsList, ...action.newsList]
@@ -18,6 +25,18 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 pageIndex: action.pageIndex
+            }
+        break;
+        case 'SEARCH':
+            return {
+                ...state,
+                search: action.search
+            }
+        break;
+        case 'LOADING_DATA':
+            return {
+                ...state,
+                loading: action.loading
             }
         break;
         default:
