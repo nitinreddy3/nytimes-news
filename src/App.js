@@ -72,9 +72,9 @@ class App extends React.Component {
 
   onHandleChange = () => {
     let { dispatch } = this.props;
-    let { pageIndex } = this.props;
+    let { pageIndex, search } = this.props;
     dispatch({ type: ACTIONS.UPDATE_PAGE_COUNT, pageIndex: pageIndex + 1 });
-    this.getNewsItems(pageIndex + 1);
+    this.getNewsItems(pageIndex + 1, search);
   }
 
   onHandleSearchField = subject => {
