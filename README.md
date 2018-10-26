@@ -1,5 +1,9 @@
 # NY TIMES NEWS
 
+## Live Demo of the application
+
+- [NYTimes App](http://newyorktimes.com.s3-website.ap-south-1.amazonaws.com/)
+
 ## Prerequisites
 
 Package Managers
@@ -19,13 +23,21 @@ Package Managers
      $ yarn start
   ```
   
+- To run tests 
+ 
+  ```javascript
+     $ yarn test
+  ```
+
 - Application will be up and running on localhost:3000
 
   Note: If you don't have yarn installed in your system, then Please go to [yarn install](https://yarnpkg.com/lang/en/docs/install/) for further instructions
   
 ## Additional Stuffs
 
-- [Newyork times APIs have been used to build](https://developer.nytimes.com/)
+- [ReactJS](https://reactjs.org)
+
+- [Newyork times API](https://developer.nytimes.com/)
 
 - [MomentJS](https://developer.nytimes.com/)
 
