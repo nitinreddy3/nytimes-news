@@ -4,6 +4,14 @@
 
 - [NYTimes App](http://newyorktimes.com.s3-website.ap-south-1.amazonaws.com/)
 
+## Features
+
+- List of news based on search criteria ( By default : 'india' )
+
+- Lazy loading on click of 'View More' button
+
+- On click of news item from list - Preview the news item on modal pop-up
+
 ## Prerequisites
 
 Package Managers
