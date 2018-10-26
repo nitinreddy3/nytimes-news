@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Layout, Spin, Icon, Button, Modal } from 'antd';
+import { Layout, Spin, Icon, Button, Alert } from 'antd';
 import { Row, Col } from './components/GridComponent';
 import { CONFIG } from './config';
-import { ACTIONS } from './constants';
-import Search from './components/Search';
-import NewsItem from './components/NewsItem';
+import { ACTIONS, MESSAGES } from './constants';
+import Search from './components/Search/Search';
+import NewsItem from './components/NewsItem/NewsItem';
 import CommonModal from './components/CommonModal';
 import './App.css';
 
@@ -58,6 +58,10 @@ class App extends React.Component {
       .then(res => {
         dispatch({ type: ACTIONS.UPDATE_NEWS_LIST, newsList: res.response.docs });
         dispatch({ type: ACTIONS.LOADING_DATA, loading: false });
+      })
+      .catch(err => {
+        dispatch({ type: ACTIONS.LOADING_DATA, loading: false });
+        dispatch({ type: ACTIONS.ERROR_LOADING, errorLoading: true });
       });
   }
 
@@ -98,7 +102,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { search, loading, visible, selectedNews } = this.props;
+    const { search, loading, visible, selectedNews, errorLoading } = this.props;
     return (
       <Spin
         spinning={loading}
@@ -111,6 +115,14 @@ class App extends React.Component {
           </Header>
           <Layout>
             <Content style={Styles.content}>
+            {errorLoading && (
+                  <Alert
+                    message={MESSAGES.errorFetchNewsItems}
+                    type="error"
+                    style={{ margin: '8px 0' }}
+                    closable
+                  />
+                )}
               <Row>
                 <Col xs="12" md="6">
                   <Search
@@ -160,7 +172,8 @@ const mapStateToProps = (state) => {
     search: state.search,
     loading: state.loading,
     visible: state.visible,
-    selectedNews: state.selectedNews
+    selectedNews: state.selectedNews,
+    errorLoading: state.errorLoading
   }
 }
 export default connect(mapStateToProps)(App);

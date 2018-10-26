@@ -6,9 +6,15 @@ const { Search: AntSearch } = Input;
 
 class Search extends React.Component {
   static propTypes = {
-    onHandleSearchField: PropTypes.func.isRequired,
-    onHandleSearch: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired
+    onHandleSearchField: PropTypes.func,
+    onHandleSearch: PropTypes.func,
+    value: PropTypes.string
+  };
+
+  static defaultProps = {
+    onHandleSearchField: () => {},
+    onHandleSearch: () => {},
+    value: ''
   };
 
   render() {

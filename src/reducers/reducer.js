@@ -10,6 +10,7 @@ let initialState = {
     search: 'india',
     loading: false,
     visible: false,
+    errorLoading: false,
 } 
 
 const reducer = (state = initialState, action) => {
@@ -54,6 +55,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedNews: action.selectedNews
+            }
+            break;
+        case ACTIONS.ERROR_LOADING:
+            return {
+                ...state,
+                errorLoading: action.errorLoading
             }
             break;
         default:
