@@ -29,7 +29,7 @@ const ItemContainer = (props) => {
                 <p style={Style.date}>{dateFormat(data.pub_date) || MESSAGES.NA}</p>
             </Col>
             <Col xs="12" md="6">
-                <p style={Style.snippet}>{data.snippet}</p>
+                <p style={Style.snippet}>{data.snippet || MESSAGES.NA}</p>
                 <p style={Style.source}>{data.source || MESSAGES.NO_SOURCE}</p>
             </Col>
             <Col xs="12" md="3" style={{textAlign: 'center'}}>

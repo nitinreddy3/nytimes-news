@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Avatar } from 'antd';
 import { Row, Col } from './GridComponent';
 import { CONFIG } from './../config';
+import { MESSAGES } from './../constants';
 import { dateFormat } from './../utils/dateUtil';
 
 const Style = {
@@ -46,9 +47,9 @@ const CommonModal = (props) => {
                 />
             </Col>
             <Col xs="12" md="9" style={{marginTop: 10}}>
-                <p style={Style.date}>{dateFormat(data.pub_date) || 'NA'}</p>
-                <p style={Style.snippet}>{data.snippet}</p>
-                <p style={Style.source}>{data.source}</p>
+                <p style={Style.date}>{dateFormat(data.pub_date) || MESSAGES.NA }</p>
+                <p style={Style.snippet}>{data.snippet || MESSAGES.NA}</p>
+                <p style={Style.source}>{data.source || MESSAGES.NO_SOURCE}</p>
             </Col>
             </Row>
             <Row>
