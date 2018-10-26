@@ -39,7 +39,7 @@ Package Managers
     - For fields with null or undefined, you will see 'NA' in the application
   
   
-## Additional Stuffs
+## Technologies used
 
 - [AntDesign](https://ant.design/)
 
